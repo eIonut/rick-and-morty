@@ -1,0 +1,18 @@
+<div class="characters">
+  <div class="character" *ngFor="let character of characters">
+      <img class="character-thumbnail" src="{{character.image}}" alt="">
+      <div class="character-details">
+        <h2>{{character.name}}</h2>
+        <span class="character-planet">
+            {{character.location.name}}
+        </span>
+
+        <span>{{character.gender}}</span>
+      </div>
+  </div>
+
+</div>
+
+<div class="pagination">
+
+</div>
