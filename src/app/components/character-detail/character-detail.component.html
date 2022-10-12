@@ -1,0 +1,15 @@
+
+<div *ngFor="let item of character">
+  <p>{{item?.name}}</p>
+  <p>{{item?.species}}</p>
+  <p>{{item?.origin?.name}}</p>
+  <img src="{{item.image}}" alt="">
+  <p>{{item?.status}}</p>
+  <div
+  class="status"
+  [ngClass]="{'alive-status' : item?.status === 'Alive',
+              'dead-status': item?.status === 'Dead',
+              'unknown-status': item?. status === 'unknown'}">
+  </div>
+</div>
+

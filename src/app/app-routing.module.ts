@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { CharacterDetailComponent } from './components/character-detail/character-detail.component';
 
 const routes: Routes = [
   {
@@ -8,7 +9,14 @@ const routes: Routes = [
   },
   {
     path: 'dashboard', component: DashboardComponent
-  }
+  },
+  {
+    path: 'character/:id', component: CharacterDetailComponent
+  },
+  {
+    path: 'search/:character-search',
+    component: DashboardComponent
+  },
 ];
 
 @NgModule({

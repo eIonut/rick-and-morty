@@ -39,3 +39,44 @@
   margin: 0 auto;
   height: 220px;
 }
+
+.pagination {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 40px 0;
+  color: rgb(207, 134, 39);
+  font-weight: bold;
+}
+
+.previous-page:hover, .next-page:hover{
+  cursor: pointer;
+}
+
+.page-clicked {
+  color: white;
+}
+
+.page-not-clicked {
+  color: rgb(207, 134, 39);
+}
+
+.current-page{
+  color: white;
+}
+
+.error-message p{
+  color: red;
+  margin: auto;
+  text-align: center;
+}
+
+.error-message{
+  padding: 20px 0;
+}
+
+.match-count {
+  text-align: center;
+  color: white;
+  padding-bottom: 20px;
+}

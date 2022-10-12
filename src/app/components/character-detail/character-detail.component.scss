@@ -1,0 +1,18 @@
+.status {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: red;
+}
+
+.alive-status{
+  background-color:green;
+}
+
+.dead-status{
+  background-color: red;
+}
+
+.unknown-status{
+  background-color: gray;
+}
