@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiCallsService } from 'src/app/services/api-calls.service';
 import {Router} from "@angular/router";
+import { ApiCallsService } from 'src/app/services/api-calls.service';
 
 @Component({
   selector: 'app-search-bar',

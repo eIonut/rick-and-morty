@@ -26,7 +26,7 @@ export class DashboardComponent implements OnInit, OnDestroy{
     ) { }
 
   ngOnInit(): void {
-    this.inputValue = this.apiCallsService.getInput();
+    // this.inputValue = this.apiCallsService.getInput();
     this.routeSub = this.activatedRoute.params.subscribe((params: Params) => {
       if(params['character-search']){
         this.getAllCharacters(params['character-search']);

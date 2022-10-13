@@ -5,7 +5,7 @@ import { CharacterDetailComponent } from './components/character-detail/characte
 
 const routes: Routes = [
   {
-    path: '', redirectTo: '/dashboard', pathMatch: 'full'
+    path: '', redirectTo: 'dashboard', pathMatch: 'full'
   },
   {
     path: 'dashboard', component: DashboardComponent
@@ -17,6 +17,10 @@ const routes: Routes = [
     path: 'search/:character-search',
     component: DashboardComponent
   },
+  {
+    path: '**',
+    component: DashboardComponent
+  }
 ];
 
 @NgModule({
