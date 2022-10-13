@@ -26,7 +26,6 @@ export class ApiCallsService {
       params = new HttpParams().set('name', name).set('page', page);
     }
 
-    console.log(params)
     return this.http.get<any>(`https://rickandmortyapi.com/api/character`, {params: params});
   }
 
