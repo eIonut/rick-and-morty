@@ -6,13 +6,13 @@ import { Observable } from 'rxjs';
 })
 export class ApiCallsService {
 
+  public name = '';
   constructor(private http: HttpClient) {
 
   };
 
-  public getAllCharacters(page?: number): Observable<any> {
-
-    return this.http.get<any>(`https://rickandmortyapi.com/api/character/?page=${page}`);
+  public getAllCharacters(): Observable<any> {
+    return this.http.get<any>(`https://rickandmortyapi.com/api/character}`);
     }
 
   public getOneCharacter(id: number): Observable<any> {
@@ -25,6 +25,16 @@ export class ApiCallsService {
     if(page){
       params = new HttpParams().set('name', name).set('page', page);
     }
+
+    console.log(params)
     return this.http.get<any>(`https://rickandmortyapi.com/api/character`, {params: params});
+  }
+
+  public setInput(name: string){
+    this.name = name;
+  }
+
+  public getInput() {
+    return this.name;
   }
 }

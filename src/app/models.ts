@@ -11,5 +11,5 @@ export interface Character {
 
 export interface APIResponse<T> {
   results: Array<T>;
-  info: {pages: number; next?: string; previous?: string; count: number};
+  info: {pages: number; next?: string; previous?: string; count: number; nextUrl: string};
 }

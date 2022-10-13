@@ -10,10 +10,9 @@
 
 .character {
   width: 250px;
-  height: 320px;
+  height: 340px;
   border-radius: 6px;
   box-shadow: 2px 0px 11px -2px rgb(207, 134, 39);
-
   transition: all 0.1s ease-in;
 
   &-details{
@@ -79,4 +78,13 @@
   text-align: center;
   color: white;
   padding-bottom: 20px;
+}
+
+.character-details h2{
+  line-height: 0.95em;
+}
+
+.match-count span{
+  color:rgb(207, 134, 39);
+  font-weight: 600;
 }

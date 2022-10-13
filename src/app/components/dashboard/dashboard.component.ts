@@ -16,6 +16,7 @@ export class DashboardComponent implements OnInit, OnDestroy{
   public count = 0;
   public pagesLength = 0;
   public currentPage = 1;
+  public inputValue = '';
   public errorMessage = '';
   public pageClick: {nextPageClick: boolean; previousPageClick: boolean} = { nextPageClick: false, previousPageClick: false}
   constructor(
@@ -25,15 +26,20 @@ export class DashboardComponent implements OnInit, OnDestroy{
     ) { }
 
   ngOnInit(): void {
+    this.inputValue = this.apiCallsService.getInput();
     this.routeSub = this.activatedRoute.params.subscribe((params: Params) => {
       if(params['character-search']){
         this.getAllCharacters(params['character-search']);
+        this.currentPage = 1;
         this.isError = false;
-      } else {
+      }
+       else{
+        this.currentPage = 1;
         this.getAllCharacters();
         this.isError = false;
-
       }
+
+
     })
   }
 
@@ -44,11 +50,18 @@ export class DashboardComponent implements OnInit, OnDestroy{
   }
 
   public getAllCharacters(name?: string, page?: number) {
-      this.apiCallsService.getAllCharactersByName(name as string, page)
+    // if(!name && !page){
+    //   this.apiCallsService.getAllCharacters()
+    //   .subscribe((res: APIResponse<Character>) => {
+    //     this.count = res.info.count;
+    //     this.pagesLength = res.info.pages;
+    //     this.characters = res.results;
+    //   });\i
+    if(!name){
+
+      this.apiCallsService.getAllCharactersByName('', page)
         .subscribe((res: APIResponse<Character>) => {
           this.count = res.info.count;
-          console.log(res)
-
           this.pagesLength = res.info.pages;
           this.characters = res.results;
         }, (err) => {
@@ -57,17 +70,35 @@ export class DashboardComponent implements OnInit, OnDestroy{
           }
           this.isError = true;
         })
-
-    if(!name){
-    this.apiCallsService.getAllCharacters(this.currentPage)
-      .subscribe((res: APIResponse<Character>) => {
-        console.log(res)
-        this.count = 0;
-        this.pagesLength = res.info.pages;
-        this.characters = res.results;
-
-      })
     }
+    else {
+      this.apiCallsService.getAllCharactersByName(name as string, page)
+        .subscribe((res: APIResponse<Character>) => {
+          this.count = res.info.count;
+          this.pagesLength = res.info.pages;
+          this.characters = res.results;
+        }, (err) => {
+          if(err.status === 404){
+            this.errorMessage = 'Character not found. Try another name!';
+          }
+          this.isError = true;
+        })
+    }
+
+
+
+
+
+    // if(!name){
+    // this.apiCallsService.getAllCharacters()
+    //   .subscribe((res: APIResponse<Character>) => {
+    //     console.log(res)
+    //     this.count = 0;
+    //     this.pagesLength = res.info.pages;
+    //     this.characters = res.results;
+
+    //   })
+    // }
   }
 
   public goToDetails(id: any){
@@ -75,9 +106,10 @@ export class DashboardComponent implements OnInit, OnDestroy{
   }
 
   public nextPage(){
+    this.inputValue = this.apiCallsService.getInput();
     this.currentPage ++;
     this.pageClick.nextPageClick = true;
-    this.getAllCharacters(undefined, this.currentPage);
+    this.getAllCharacters(this.inputValue ,this.currentPage);
     this.isError = false;
 
     setTimeout(() => {
@@ -86,11 +118,11 @@ export class DashboardComponent implements OnInit, OnDestroy{
   }
 
   public previousPage(){
+    this.inputValue = this.apiCallsService.getInput();
     this.currentPage --;
     this.pageClick.previousPageClick = true;
-    this.getAllCharacters(undefined,this.currentPage);
+    this.getAllCharacters(this.inputValue, this.currentPage);
     this.isError = false;
-
     setTimeout(() => {
       this.pageClick.previousPageClick = false;
     }, 250);

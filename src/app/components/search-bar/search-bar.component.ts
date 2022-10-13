@@ -9,13 +9,16 @@ import {Router} from "@angular/router";
 })
 export class SearchBarComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+    private apiCalls: ApiCallsService,
+    ) { }
 
   ngOnInit(): void {
   }
 
   onSubmit(form: any){
-    this.router.navigate(['search', form.value.search]);
+        this.router.navigate(['search', form.value.search]);
+        this.apiCalls.setInput(form.value.search);
   }
 
 }
