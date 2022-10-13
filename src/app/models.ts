@@ -7,6 +7,7 @@ export interface Character {
   species?: string;
   status?: string;
   gender?: string;
+  episode: [];
 }
 
 export interface APIResponse<T> {

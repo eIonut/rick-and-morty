@@ -9,13 +9,23 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CharacterDetailComponent } from './components/character-detail/character-detail.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EpisodeComponent } from './components/episode/episode.component';
+import { LocationComponent } from './components/location/location.component';
+import {MatExpansionModule} from "@angular/material/expansion";
+import {ExtractNumberPipe} from "./extractNumber.pipe";
+import {MatChipsModule} from "@angular/material/chips";
+import {MatIconModule} from "@angular/material/icon";
+import {DragDropModule} from "@angular/cdk/drag-drop";
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     SearchBarComponent,
-    CharacterDetailComponent
+    CharacterDetailComponent,
+    EpisodeComponent,
+    LocationComponent,
+    ExtractNumberPipe
   ],
   imports: [
     BrowserModule,
@@ -23,6 +33,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    MatExpansionModule,
+    MatChipsModule,
+    MatIconModule,
+    DragDropModule,
 
   ],
   providers: [],

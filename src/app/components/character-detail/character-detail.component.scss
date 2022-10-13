@@ -16,3 +16,46 @@
 .unknown-status{
   background-color: gray;
 }
+
+.episode {
+  width: 90px;
+  background-color: #e0e0e0;
+  color: #000000de;
+  font-size: 12px;
+  padding: 6px 8px;
+  border-radius: 16px;
+  margin: 4px;
+  transition: background-color 0.3s;
+  text-align: center;
+  font-weight: 600;
+}
+
+.episode:hover {
+  cursor: pointer;
+  background-color: #c9c9c9;
+
+}
+
+.episodes {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+mat-expansion-panel {
+  width: 80%;
+  margin: auto;
+}
+
+mat-panel-description {
+  flex-grow: 1;
+  color: rgb(207, 134, 39);
+  font-weight: 600;
+  font-size: 16px;
+}
+
+mat-panel-title {
+  padding-left: 38px;
+}

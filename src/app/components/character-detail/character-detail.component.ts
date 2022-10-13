@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiCallsService } from 'src/app/services/api-calls.service';
-import { Character, APIResponse } from 'src/app/models';
-import { ActivatedRoute } from '@angular/router';
+import { Character } from 'src/app/models';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-character-detail',
@@ -13,7 +13,8 @@ export class CharacterDetailComponent implements OnInit {
   private id!: number;
 
   constructor(private apiService: ApiCallsService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+              private router: Router) { }
 
   ngOnInit(): void {
     this.route.params.subscribe((param) => {
@@ -27,7 +28,11 @@ export class CharacterDetailComponent implements OnInit {
       })
   }
 
-  public getChar() {
+
+  goToEpisode(s: any) {
+    const id = s.replace(/\D/g, '');
+    this.router.navigate(['episode', id]);
   }
+
 
 }

@@ -1,8 +1,12 @@
 
 <div *ngFor="let item of character">
-  <p>{{item?.name}}</p>
-  <p>{{item?.species}}</p>
-  <p>{{item?.origin?.name}}</p>
+  <p>Name: {{item?.name}}</p>
+  <p>Species: {{item?.species}}</p>
+  <p>Origin: {{item?.origin?.name}}</p>
+  <p>Origin url: {{item?.origin?.url}}</p>
+  <p>Location: {{item?.location?.name}}</p>
+
+
   <img src="{{item.image}}" alt="">
   <p>{{item?.status}}</p>
   <div
@@ -13,3 +17,25 @@
   </div>
 </div>
 
+<ng-container *ngFor="let item of character">
+<mat-accordion class="episodes-main">
+  <mat-expansion-panel class="episodes-container">
+    <mat-expansion-panel-header class="episodes-header">
+      <mat-panel-title>
+        Appearance: {{item.episode.length}} episodes.
+      </mat-panel-title>
+      <mat-panel-description>
+        Episodes:
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <div class="episodes">
+      <div class="episode" *ngFor="let episode of item.episode" (click)="goToEpisode(episode)">
+        <a>Episode {{episode | extractNumber}}</a>
+      </div>
+
+    </div>
+
+
+  </mat-expansion-panel>
+</mat-accordion>
+</ng-container>

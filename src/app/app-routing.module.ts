@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CharacterDetailComponent } from './components/character-detail/character-detail.component';
-
+import { EpisodeComponent } from './components/episode/episode.component';
+import { LocationComponent } from './components/location/location.component';
 const routes: Routes = [
   {
     path: '', redirectTo: 'dashboard', pathMatch: 'full'
@@ -16,6 +17,14 @@ const routes: Routes = [
   {
     path: 'search/:character-search',
     component: DashboardComponent
+  },
+  {
+    path: 'episode/:id',
+    component: EpisodeComponent
+  },
+  {
+    path: 'location/:id',
+    component: LocationComponent
   },
   {
     path: '**',
