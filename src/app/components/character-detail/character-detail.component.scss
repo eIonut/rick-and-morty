@@ -14,13 +14,11 @@
 .dead-status{
   background-color: rgb(216, 89, 89);
   margin-right: 5px;
-
 }
 
 .unknown-status{
   background-color: gray;
   margin-right: 5px;
-
 }
 
 .episode {
@@ -39,7 +37,6 @@
 .episode:hover {
   cursor: pointer;
   background-color: #c9c9c9;
-
 }
 
 .episodes {
@@ -87,8 +84,8 @@ mat-panel-title {
 .character-details {
   color: white;
   padding: 20px;
-  width: 460px;
-  max-width: 460px;
+  width: 560px;
+  max-width: 560px;
   font-size: 24px;
   line-height: 2em;
   display: flex;
@@ -102,8 +99,7 @@ mat-panel-title {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
-
-
+  padding-bottom: 20px;
 }
 
 .character-image-container{
@@ -111,6 +107,8 @@ mat-panel-title {
   max-width: 400px;
   height: 100%;
   margin-right: 20px;
+  display: flex;
+  align-items: center;
 
   &-image {
     width: 100%;
@@ -145,13 +143,18 @@ mat-panel-title {
 .species-p, .location-p, .origin-p {
   display: flex;
   align-items: center;
+
 }
 
 .species-icon, .location-icon, .origin-icon{
   margin-right: 5px;
   color: rgb(207, 134, 39);
+  font-size: 32px;
+  display: flex;
+  justify-content: center;
+  height: 40px;
+  align-items: center;
 }
-
 
 @media only screen and (max-width: 600px) {
  .character-details {

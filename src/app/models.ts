@@ -10,6 +10,15 @@ export interface Character {
   episode: [];
 }
 
+export interface Episode {
+  id?: number,
+  name?: string,
+  air_date: string
+  episode: string,
+  characters: [],
+  created: string
+}
+
 export interface APIResponse<T> {
   results: Array<T>;
   info: {pages: number; next?: string; previous?: string; count: number; nextUrl: string};

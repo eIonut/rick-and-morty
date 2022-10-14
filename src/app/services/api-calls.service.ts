@@ -15,8 +15,21 @@ export class ApiCallsService {
     return this.http.get<any>(`https://rickandmortyapi.com/api/character}`);
     }
 
+
+
   public getOneCharacter(id: number): Observable<any> {
     return this.http.get<any>(`https://rickandmortyapi.com/api/character/${id}`);
+  }
+
+  public getOneEpisode(id: number): Observable<any> {
+    return this.http.get<any>(`https://rickandmortyapi.com/api/episode/${id}`);
+  }
+
+  public getMultipleCharacters(arr: number[]): Observable<any> {
+
+    console.log(arr);
+    return this.http.get<any>(`https://rickandmortyapi.com/api/character/${arr}`);
+
   }
 
   public getAllCharactersByName(name: string, page?: number): Observable<any> {

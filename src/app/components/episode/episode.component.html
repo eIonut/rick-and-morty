@@ -1,1 +1,8 @@
-<p>episode works!</p>
+<div *ngFor="let episode of episodes">
+  <p>{{episode.air_date}}</p>
+
+</div>
+
+<div class="image-container" >
+  <img *ngFor="let character of characterInfo" class="character-image" src="{{character.image}}" alt="">
+</div>
