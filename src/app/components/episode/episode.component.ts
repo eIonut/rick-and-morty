@@ -25,10 +25,12 @@ export class EpisodeComponent implements OnInit {
     this.apiCallsService.getOneEpisode(this.id)
       .subscribe((res: any) => {
         this.episodes.push(res);
+        console.log(this.episodes)
         this.character_ids = this.convertToArrayOfNum(res.characters);
         this.apiCallsService.getMultipleCharacters(this.character_ids)
         .subscribe((res) => {
           this.characterInfo = res;
+          console.log(this.characterInfo)
         })
       })
   }
