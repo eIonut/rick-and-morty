@@ -1,0 +1,19 @@
+<div class="episodes-container-div" >
+  <mat-accordion class="episodes-main">
+    <mat-expansion-panel class="episodes-container">
+      <mat-expansion-panel-header class="episodes-header">
+        <mat-panel-title>
+          Appearance: {{episodeList.length}} episodes.
+        </mat-panel-title>
+        <mat-panel-description>
+          Episodes:
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div class="episodes">
+        <div class="episode" *ngFor="let episode of episodeList" (click)="goToEpisode(episode)">
+          <a>Episode {{episode | extractNumber}}</a>
+        </div>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+  </div>

@@ -16,6 +16,7 @@ import {ExtractNumberPipe} from "./extractNumber.pipe";
 import {MatChipsModule} from "@angular/material/chips";
 import {MatIconModule} from "@angular/material/icon";
 import {DragDropModule} from "@angular/cdk/drag-drop";
+import { EpisodesListComponent } from './components/episodes-list/episodes-list.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {DragDropModule} from "@angular/cdk/drag-drop";
     CharacterDetailComponent,
     EpisodeComponent,
     LocationComponent,
-    ExtractNumberPipe
+    ExtractNumberPipe,
+    EpisodesListComponent
   ],
   imports: [
     BrowserModule,

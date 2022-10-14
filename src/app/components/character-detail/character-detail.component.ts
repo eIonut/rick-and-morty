@@ -11,6 +11,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 export class CharacterDetailComponent implements OnInit {
   public character: Character[] = [];
   private id!: number;
+  public episodeList: [] = [];
 
   constructor(private apiService: ApiCallsService,
     private route: ActivatedRoute,
@@ -23,7 +24,9 @@ export class CharacterDetailComponent implements OnInit {
 
     this.apiService.getOneCharacter(this.id)
       .subscribe((res) => {
+        console.log(res)
         this.character?.push(res);
+        this.episodeList = res.episode;
         console.log(this.character)
       })
   }

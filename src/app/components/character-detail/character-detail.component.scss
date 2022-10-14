@@ -1,20 +1,26 @@
 .status {
-  width: 10px;
-  height: 10px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
   background-color: red;
 }
 
 .alive-status{
-  background-color:green;
+  background-color:rgb(125, 241, 125);
+  margin: 0;
+  margin-right: 5px;
 }
 
 .dead-status{
-  background-color: red;
+  background-color: rgb(216, 89, 89);
+  margin-right: 5px;
+
 }
 
 .unknown-status{
   background-color: gray;
+  margin-right: 5px;
+
 }
 
 .episode {
@@ -49,6 +55,10 @@ mat-expansion-panel {
   margin: auto;
 }
 
+.episodes-container-div{
+  padding-bottom: 20px;
+}
+
 mat-panel-description {
   flex-grow: 1;
   color: rgb(207, 134, 39);
@@ -58,4 +68,93 @@ mat-panel-description {
 
 mat-panel-title {
   padding-left: 38px;
+}
+
+.character-container{
+  display: flex;
+  width: 80%;
+  margin: auto;
+  min-height: 500px;
+  align-items: center;
+  flex-direction: column;
+  background-color: #333;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  padding: 20px;
+  margin-top: 100px;
+}
+
+.character-details {
+  color: white;
+  padding: 20px;
+  width: 460px;
+  max-width: 460px;
+  font-size: 24px;
+  line-height: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.character-inner-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+
+}
+
+.character-image-container{
+  width: 400px;
+  max-width: 400px;
+  height: 100%;
+  margin-right: 20px;
+
+  &-image {
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 6px;
+  }
+}
+
+.status-container{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.status-container p {
+  margin: 0;
+  padding-left: 5px;
+}
+
+.character-name {
+  color: rgb(207, 134, 39);
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  font-size: 32px;
+  max-width: 100%;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.species-p, .location-p, .origin-p {
+  display: flex;
+  align-items: center;
+}
+
+.species-icon, .location-icon, .origin-icon{
+  margin-right: 5px;
+  color: rgb(207, 134, 39);
+}
+
+
+@media only screen and (max-width: 600px) {
+ .character-details {
+  font-size: 16px;
+ }
 }
