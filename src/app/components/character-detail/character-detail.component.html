@@ -1,0 +1,28 @@
+<app-back-button></app-back-button>
+
+<main class="character-container" *ngFor="let item of character">
+  <h1 class="character-name">{{item?.name}}</h1>
+  <div class="character-inner-container">
+    <div class="character-image-container">
+      <img class="character-image-container-image" src="{{item.image}}" alt="">
+    </div>
+    <div class="character-details">
+      <p class="species-p">	<mat-icon class="species-icon"s>supervisor_account</mat-icon>Species: {{item?.species}}</p>
+      <p class="origin-p"><mat-icon class="origin-icon">crop_original</mat-icon>Origin: {{item?.origin?.name}}</p>
+      <!-- <p>Origin url: {{item?.origin?.url}}</p> -->
+      <p class="location-p"><mat-icon class="location-icon"> location_on</mat-icon>Location: {{item?.location?.name}}</p>
+      <div class="status-container">
+        <div
+        class="status"
+        [ngClass]="{'alive-status' : item?.status === 'Alive',
+                    'dead-status': item?.status === 'Dead',
+                    'unknown-status': item?. status === 'unknown'}">
+        </div>
+        <p>{{item?.status | titlecase}}</p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<app-episodes-list [episodeList]="episodeList"></app-episodes-list>
+

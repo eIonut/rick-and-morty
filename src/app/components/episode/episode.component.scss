@@ -1,0 +1,100 @@
+.image-container{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  flex-direction: row;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.character-image{
+  width: 100px;
+  height: 100px;
+  margin: 2px;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.character-image:hover{
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.characters-title{
+ text-align: center;
+ color: rgb(207, 134, 39);
+ font-family: "Concert One", cursive;
+ padding: 20px 0;
+ font-size: 36px;
+ margin: 0;
+}
+
+.episode-details {
+  max-width: 1200px;
+  padding-top: 20px;
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  margin: 0 auto;
+}
+
+.delimitator {
+  padding: 0 5px;
+  color: rgb(207, 134, 39);
+}
+
+.episode-name {
+  color: rgb(207, 134, 39);
+}
+
+
+.episode-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tv-icon {
+  color: rgb(207, 134, 39);
+  font-size: 32px;
+  width: 40px;
+  height: 40px;
+}
+
+.character-title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.character-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  color: rgb(207, 134, 39);
+  font-size: 48px;
+  margin-right: 10px;
+}
+
+@media only screen and (max-width: 700px) {
+  .episode-details{
+    font-size: 16px;
+  }
+
+  .episode-details p {
+    margin: 0;
+  }
+
+  .tv-icon {
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

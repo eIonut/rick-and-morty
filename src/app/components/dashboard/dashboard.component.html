@@ -1,0 +1,43 @@
+<div class="error-message" *ngIf="isError">
+  <p>{{errorMessage}}</p>
+</div>
+
+<p class="match-count" *ngIf="count !== 0">Matching Results: <span>{{count}}</span></p>
+
+<div class="characters">
+  <div class="character" *ngFor="let character of characters" (click)="goToDetails(character.id)">
+      <img class="character-thumbnail" src="{{character?.image}}" alt="">
+      <div class="character-details">
+        <h2>{{character.name}}</h2>
+        <p class="character-planet">
+            {{character?.location?.name}}
+        </p>
+
+        <p>{{character.gender}}</p>
+      </div>
+  </div>
+
+</div>
+
+<div class="pagination">
+  <p
+  *ngIf="(currentPage < pagesLength) && !isError && currentPage >= 2"
+    class="previous-page"
+    (click)="previousPage()"
+    [ngClass]="{'page-clicked': pageClick.previousPageClick === true,
+                'page-not-clicked': pageClick.previousPageClick === false}"
+                >
+                Previous page
+</p>
+  <p *ngIf="!isError">Page <span class="current-page">{{currentPage}}</span> of {{pagesLength}}</p>
+  <p
+  *ngIf="(currentPage < pagesLength) && !isError"
+    class="next-page"
+    (click)="nextPage()"
+    [ngClass]="{'page-clicked': pageClick.nextPageClick === true,
+                'page-not-clicked': pageClick.nextPageClick === false}"
+    >
+    Next page
+</p>
+
+</div>

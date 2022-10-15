@@ -1,0 +1,93 @@
+.characters {
+  max-width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  gap: 20px;
+  justify-content: center;
+  color: white;
+}
+
+.character {
+  width: 250px;
+  height: 340px;
+  border-radius: 6px;
+  box-shadow: 2px 0px 11px -2px rgb(207, 134, 39);
+  transition: all 0.1s ease-in;
+
+  &-details{
+    padding: 5px;
+  }
+
+  &-planet{
+    color: rgb(207, 134, 39);
+    font-weight: 700;
+    margin-right: 5px;
+  }
+}
+
+.character:hover {
+  cursor: pointer;
+  box-shadow: 2px 0px 37px 1px rgb(207, 134, 39);
+  transform: translateY(2%);
+}
+
+.character-thumbnail {
+  width: 100%;
+  object-fit: cover;
+  margin: 0 auto;
+  height: 220px;
+}
+
+.pagination {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 40px 0 20px;
+  color: rgb(207, 134, 39);
+  font-weight: bold;
+}
+
+.previous-page:hover, .next-page:hover{
+  cursor: pointer;
+}
+
+.page-clicked {
+  color: white;
+}
+
+.page-not-clicked {
+  color: rgb(207, 134, 39);
+}
+
+.current-page{
+  color: white;
+}
+
+.error-message p{
+  color: red;
+  margin: auto;
+  text-align: center;
+}
+
+.error-message{
+  padding: 20px 0;
+}
+
+.match-count {
+  text-align: center;
+  color: white;
+  padding-bottom: 20px;
+}
+
+.character-details h2{
+  line-height: 0.95em;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  font-family: 'Concert One', cursive;
+}
+
+.match-count span{
+  color:rgb(207, 134, 39);
+  font-weight: 600;
+}

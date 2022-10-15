@@ -1,0 +1,32 @@
+.back-container{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin: 20px 10px;
+  background-color: #333;
+  width: fit-content;
+  padding: 5px;
+  padding-right: 12px;
+  border-radius: 12px;
+  transition: background-color 0.2s;
+}
+
+.back-container:hover {
+  cursor: pointer;
+  background-color: #c9c9c9;
+}
+
+.go-back-button {
+  color: rgb(207, 134, 39);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.back-icon {
+  color: white;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
