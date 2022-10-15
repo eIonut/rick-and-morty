@@ -17,6 +17,7 @@ import {MatChipsModule} from "@angular/material/chips";
 import {MatIconModule} from "@angular/material/icon";
 import {DragDropModule} from "@angular/cdk/drag-drop";
 import { EpisodesListComponent } from './components/episodes-list/episodes-list.component';
+import { BackButtonComponent } from './components/back-button/back-button.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { EpisodesListComponent } from './components/episodes-list/episodes-list.
     EpisodeComponent,
     LocationComponent,
     ExtractNumberPipe,
-    EpisodesListComponent
+    EpisodesListComponent,
+    BackButtonComponent
   ],
   imports: [
     BrowserModule,

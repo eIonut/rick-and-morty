@@ -1,9 +1,17 @@
-<div *ngFor="let episode of episodes">
-  <p>{{episode.air_date}}</p>
-  <p>{{episode.created | date}}</p>
-  <p>{{episode.episode}}</p>
-  <p>{{episode.name}}</p>
+<app-back-button></app-back-button>
 
+<div class="episode-details" *ngFor="let episode of episodes">
+  <div class="episode-icon-container">
+    <mat-icon class="tv-icon">tv</mat-icon>
+    <p>Episode: <span class="episode-name">{{episode.name}},</span> {{episode.episode}}<span class="delimitator">|</span> </p>
+  </div>
+  <p>Air date: {{episode.air_date}}<span class="delimitator">|</span> </p>
+  <p>Created: {{episode.created | date}}</p>
+</div>
+
+<div class="character-title-container">
+  <mat-icon class="character-icon">person</mat-icon>
+  <h1 class="characters-title">Characters</h1>
 </div>
 
 <div class="image-container" >
@@ -13,3 +21,7 @@
    [routerLink]="['/character', character.id]"
     src="{{character.image}}" alt="">
 </div>
+
+
+
+

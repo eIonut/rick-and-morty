@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiCallsService } from 'src/app/services/api-calls.service';
-import { Episode, APIResponse, Character } from 'src/app/models';
-import {ActivatedRoute, Router} from '@angular/router';
-import { isNgTemplate } from '@angular/compiler';
-
+import { Episode, Character } from 'src/app/models';
+import {ActivatedRoute} from '@angular/router';
+import { NavigationService } from 'src/app/services/navigation.service';
 @Component({
   selector: 'app-episode',
   templateUrl: './episode.component.html',
@@ -15,7 +14,10 @@ export class EpisodeComponent implements OnInit {
   public characterInfo: Character[] = [];
   public id!: number;
   public characterId!: number;
-  constructor(private apiCallsService: ApiCallsService,  private route: ActivatedRoute,) { }
+  constructor(private apiCallsService: ApiCallsService,
+      private route: ActivatedRoute,
+      public navigationService: NavigationService
+      ) { }
 
   ngOnInit(): void {
     this.route.params.subscribe((param) => {
@@ -25,12 +27,10 @@ export class EpisodeComponent implements OnInit {
     this.apiCallsService.getOneEpisode(this.id)
       .subscribe((res: any) => {
         this.episodes.push(res);
-        console.log(this.episodes)
         this.character_ids = this.convertToArrayOfNum(res.characters);
         this.apiCallsService.getMultipleCharacters(this.character_ids)
         .subscribe((res) => {
           this.characterInfo = res;
-          console.log(this.characterInfo)
         })
       })
   }

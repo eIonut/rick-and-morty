@@ -3,6 +3,7 @@ import { ApiCallsService } from 'src/app/services/api-calls.service';
 import { Character, APIResponse } from 'src/app/models';
 import {ActivatedRoute, Params, Router} from "@angular/router";
 import {Subscription} from "rxjs";
+import { NavigationService } from 'src/app/services/navigation.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -20,12 +21,14 @@ export class DashboardComponent implements OnInit, OnDestroy{
   public errorMessage = '';
   public pageClick: {nextPageClick: boolean; previousPageClick: boolean} = { nextPageClick: false, previousPageClick: false}
   constructor(
+    public navigation: NavigationService,
     private apiCallsService: ApiCallsService,
     private router: Router,
     private activatedRoute: ActivatedRoute,
     ) { }
 
   ngOnInit(): void {
+    this.navigation.startSaveHistory();
     // this.inputValue = this.apiCallsService.getInput();
     this.routeSub = this.activatedRoute.params.subscribe((params: Params) => {
       if(params['character-search']){
@@ -50,13 +53,6 @@ export class DashboardComponent implements OnInit, OnDestroy{
   }
 
   public getAllCharacters(name?: string, page?: number) {
-    // if(!name && !page){
-    //   this.apiCallsService.getAllCharacters()
-    //   .subscribe((res: APIResponse<Character>) => {
-    //     this.count = res.info.count;
-    //     this.pagesLength = res.info.pages;
-    //     this.characters = res.results;
-    //   });\i
     if(!name){
 
       this.apiCallsService.getAllCharactersByName('', page)

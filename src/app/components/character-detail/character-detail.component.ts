@@ -24,10 +24,8 @@ export class CharacterDetailComponent implements OnInit {
 
     this.apiService.getOneCharacter(this.id)
       .subscribe((res) => {
-        console.log(res)
         this.character?.push(res);
         this.episodeList = res.episode;
-        console.log(this.character)
       })
   }
 
